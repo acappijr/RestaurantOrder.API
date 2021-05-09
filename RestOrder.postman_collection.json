@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "2caaa787-c65f-4c3e-bef1-ef30c4720283",
+		"name": "RestOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Dishes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/dishes",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dishes (XML Format)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{apiAddress}}/dishes",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dishes (accept error)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/zip",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{apiAddress}}/dishes",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dish",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/dishes/d28888e9-2ba9-473a-a40f-e38cd54f9b95",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"dishes",
+						"d28888e9-2ba9-473a-a40f-e38cd54f9b95"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dish (unexisting)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/dishes/d28888e9-2ba9-473a-a40f-e38cd54f9b94",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"dishes",
+						"d28888e9-2ba9-473a-a40f-e38cd54f9b94"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/orders",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/orders/d27777e9-2ba9-473a-a40f-e40cd54f9b95",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"orders",
+						"d27777e9-2ba9-473a-a40f-e40cd54f9b95"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Order (unexisting)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/orders/d27777e9-2ba9-473a-a40f-e40cd54f9b00",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"orders",
+						"d27777e9-2ba9-473a-a40f-e40cd54f9b00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dishes for Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/orders/d27777e9-2ba9-473a-a40f-e40cd54f9b95/dishes",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"orders",
+						"d27777e9-2ba9-473a-a40f-e40cd54f9b95",
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dishes for Order (unexisting)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/orders/d27777e9-2ba9-473a-a40f-e40cd54f9b00/dishes",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"orders",
+						"d27777e9-2ba9-473a-a40f-e40cd54f9b00",
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fault Test",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{apiAddress}}/dishes",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"Table 30\",\r\n    \"dishes\": [\r\n        {\r\n            \"id\": \"d28888e9-2ba9-473a-a40f-e38cd54f9b95\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"id\": \"2902b665-1190-4c70-1115-b9c2d7680450\",\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiAddress}}/orders",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Order (validation error 1)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"Table 30\",\r\n    \"dishes\": [\r\n        {\r\n            \"id\": \"2902b665-1190-4c70-1115-b9c2d7680450\",\r\n            \"quantity\": null\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiAddress}}/orders",
+					"host": [
+						"{{apiAddress}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
